@@ -3,16 +3,15 @@ package com.feedbackinductor.demo.component;
 import com.feedbackinductor.demo.model.Post;
 import com.feedbackinductor.demo.service.DiscourseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+@Component
 public class ApiCaller {
     private final DiscourseService discourseService;
-
-    private final static Integer POST_ID = 872227;
 
     @Autowired
     public ApiCaller(DiscourseService discourseService) {
