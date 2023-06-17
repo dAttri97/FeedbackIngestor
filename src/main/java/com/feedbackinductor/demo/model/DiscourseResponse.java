@@ -2,7 +2,7 @@ package com.feedbackinductor.demo.model;
 
 import java.util.List;
 
-public class DiscourseTimeRangeResponse {
+public class DiscourseResponse {
     private List<Post> posts;
 
     // Getter
