@@ -1,7 +1,11 @@
 package com.feedbackinductor.demo.model;
 
-import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.List;
+@Getter
+@Setter
 public class Post {
     private int id;
     private String username;

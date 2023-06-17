@@ -1,24 +1,22 @@
 package com.feedbackinductor.demo.service;
 
+import com.feedbackinductor.demo.model.DiscourseTimeRangeResponse;
+import com.feedbackinductor.demo.model.Post;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.client.RestTemplate;
+import java.util.Date;
+import java.util.List;
 
 @Service
 public class DiscourseService {
-    private final WebClient webClient;
+    @Value("${discourse.api.base-url}")
+    private String discourseApiBaseUrl;
 
-    public DiscourseService() {
-        this.webClient = WebClient.create("https://meta.discourse.org/search.json?page=1&q=after%3A2021-01-01+before%3A2021-02-20");
-    }
-
-    public void fetchTopics() {
-        webClient.get()
-                .uri("/topics.json")
-                .retrieve()
-                .bodyToMono(String.class)
-                .subscribe(responseBody -> {
-                    // Handle the response here
-                    System.out.println(responseBody);
-                });
+    public List<Post> getPostsInTimeRange(Date startTime, Date endTime) {
+        String url = discourseApiBaseUrl + "/posts.json?start_date=" + startTime.getTime() + "&end_date=" + endTime.getTime();
+        ResponseEntity<DiscourseTimeRangeResponse> responseEntity = new RestTemplate().getForEntity(url, DiscourseTimeRangeResponse.class);
+        return responseEntity.getBody().getPosts();
     }
 }
