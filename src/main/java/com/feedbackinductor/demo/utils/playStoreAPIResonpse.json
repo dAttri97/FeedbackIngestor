@@ -1,0 +1,25 @@
+{
+  "reviews": [
+    {
+      "reviewId": "ABC123",
+      "userName": "JohnDoe",
+      "userComment": "Great app!",
+      "userRating": 5,
+      "reviewDate": "2023-06-18T10:15:00Z",
+      "appVersion": "1.2.3",
+      "developerReply": {
+        "replyText": "Thank you for your positive feedback!"
+      }
+    },
+    {
+      "reviewId": "DEF456",
+      "userName": "JaneSmith",
+      "userComment": "Needs improvement.",
+      "userRating": 3,
+      "reviewDate": "2023-06-17T14:30:00Z",
+      "appVersion": "1.2.3",
+      "developerReply": null
+    }
+  ],
+  "pageToken": "NEXT_PAGE_TOKEN"
+}

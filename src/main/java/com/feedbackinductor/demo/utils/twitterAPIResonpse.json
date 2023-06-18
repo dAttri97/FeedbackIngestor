@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "id": "1405535537980472834",
+      "text": "Hello, Twitter API!",
+      "author_id": "1234567890",
+      "created_at": "2021-06-17T10:30:00.000Z"
+    },
+    {
+      "id": "1405535549920517633",
+      "text": "Excited to announce our new product!",
+      "author_id": "987654321",
+      "created_at": "2021-06-17T10:31:00.000Z"
+    }
+  ],
+  "meta": {
+    "newest_id": "1405535537980472834",
+    "oldest_id": "1405535549920517633",
+    "result_count": 10,
+    "next_token": "b26v89c19zqg8o3f"
+  }
+}

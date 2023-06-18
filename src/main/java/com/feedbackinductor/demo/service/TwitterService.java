@@ -55,7 +55,7 @@ public class TwitterService {
         return tweetResponse;
     }
 
-    public String search(String searchString) throws IOException, URISyntaxException {
+    public String search2(String searchString) throws IOException, URISyntaxException {
         String searchResponse = null;
 
         HttpClient httpClient = HttpClients.custom()
@@ -80,6 +80,5 @@ public class TwitterService {
         }
         return searchResponse;
     }
-
 }
 

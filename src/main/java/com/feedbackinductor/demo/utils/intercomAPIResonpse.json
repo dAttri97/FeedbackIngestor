@@ -1,0 +1,103 @@
+{
+  "type": "list",
+  "conversations": [
+    {
+      "id": "1234567890",
+      "type": "conversation",
+      "created_at": 1654100643,
+      "updated_at": 1654101245,
+      "user": {
+        "id": "9876543210",
+        "name": "John Doe",
+        "email": "john.doe@example.com"
+      },
+      "assignee": {
+        "id": "5432109876",
+        "name": "Jane Smith"
+      },
+      "conversation_message": {
+        "id": "0987654321",
+        "type": "conversation_message",
+        "body": "Hello, how can I assist you?",
+        "author": {
+          "type": "admin",
+          "id": "5432109876",
+          "name": "Jane Smith"
+        }
+      },
+      "conversation_parts": [
+        {
+          "part_type": "comment",
+          "id": "1234567890",
+          "body": "Sure, let me check that for you.",
+          "created_at": 1654100745,
+          "author": {
+            "type": "admin",
+            "id": "5432109876",
+            "name": "Jane Smith"
+          }
+        },
+        {
+          "part_type": "comment",
+          "id": "0987654321",
+          "body": "Here is the information you requested.",
+          "created_at": 1654100845,
+          "author": {
+            "type": "admin",
+            "id": "5432109876",
+            "name": "Jane Smith"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2345678901",
+      "type": "conversation",
+      "created_at": 1654099843,
+      "updated_at": 1654100445,
+      "user": {
+        "id": "8765432109",
+        "name": "Jane Smith",
+        "email": "jane.smith@example.com"
+      },
+      "assignee": {
+        "id": "5432109876",
+        "name": "John Doe"
+      },
+      "conversation_message": {
+        "id": "9876543210",
+        "type": "conversation_message",
+        "body": "Hi, I have a question about your product.",
+        "author": {
+          "type": "user",
+          "id": "8765432109",
+          "name": "Jane Smith"
+        }
+      },
+      "conversation_parts": [
+        {
+          "part_type": "comment",
+          "id": "2345678901",
+          "body": "Sure, I'm here to help. What's your question?",
+          "created_at": 1654099945,
+          "author": {
+            "type": "admin",
+            "id": "5432109876",
+            "name": "John Doe"
+          }
+        },
+        {
+          "part_type": "comment",
+          "id": "9876543210",
+          "body": "Here is the answer to your question.",
+          "created_at": 1654100045,
+          "author": {
+            "type": "admin",
+            "id": "5432109876",
+            "name": "John Doe"
+          }
+        }
+      ]
+    }
+  ]
+}
