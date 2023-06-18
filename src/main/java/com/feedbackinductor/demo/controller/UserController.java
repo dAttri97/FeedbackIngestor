@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/users")
 public class UserController {
     ApiCaller apiCaller;
     @Autowired
@@ -18,8 +19,15 @@ public class UserController {
         this.apiCaller = apiCaller;
     }
     @GetMapping
+    @RequestMapping("/api/users")
     public List<Post> getUsers() {
         List<Post> postList = apiCaller.getDiscoursePosts();
         return postList;
+    }
+
+    @GetMapping
+    @RequestMapping("/api/tweets")
+    public String getTweets() throws IOException, URISyntaxException {
+        return apiCaller.getTweets();
     }
 }
