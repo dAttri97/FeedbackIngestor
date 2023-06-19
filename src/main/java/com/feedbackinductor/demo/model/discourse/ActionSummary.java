@@ -1,4 +1,4 @@
-package com.feedbackinductor.demo.model;
+package com.feedbackinductor.demo.model.discourse;
 
 public class ActionSummary {
     private int id;

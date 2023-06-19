@@ -1,4 +1,4 @@
-package com.feedbackinductor.demo.service;
+package com.feedbackinductor.demo.caller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.apache.http.HttpEntity;
@@ -20,13 +20,13 @@ import java.util.ArrayList;
 import java.util.logging.Logger;
 
 @Service
-public class TwitterService {
+public class TwitterAPICaller {
     @Value("${twitter.api.base-url}")
     private String twitterApiBaseUrl;
 
     @Value("${twitter.api.bearer-token}")
     private String twitterApiBearerToken;
-    private static final Logger logger = Logger.getLogger(TwitterService.class.getName());
+    private static final Logger logger = Logger.getLogger(TwitterAPICaller.class.getName());
 
     private String getTweets(String ids) throws IOException, URISyntaxException {
         String tweetResponse = null;

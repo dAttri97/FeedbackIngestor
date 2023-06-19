@@ -1,6 +1,5 @@
 package com.feedbackinductor.demo.model.discourse;
 
-import com.feedbackinductor.demo.model.ActionSummary;
 import lombok.Getter;
 import lombok.Setter;
 

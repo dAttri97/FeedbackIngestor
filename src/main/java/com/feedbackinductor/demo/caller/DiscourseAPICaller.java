@@ -1,4 +1,4 @@
-package com.feedbackinductor.demo.service;
+package com.feedbackinductor.demo.caller;
 
 import com.feedbackinductor.demo.model.discourse.DiscourseResponse;
 import com.feedbackinductor.demo.model.discourse.Post;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 @Slf4j
-public class DiscourseService {
+public class DiscourseAPICaller {
     private static final String API_BASE_URL = "https://meta.discourse.org";
 
     public List<Post> getPostsInTimeRange(Date startTime, Date endTime) {
