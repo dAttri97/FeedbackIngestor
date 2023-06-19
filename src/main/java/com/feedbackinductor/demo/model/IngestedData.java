@@ -35,4 +35,15 @@ public class IngestedData {
     public void setDate(Date date) {
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("IngestedData{");
+        sb.append("user_name='" + user_name);
+        sb.append(", body='" + body);
+        sb.append(", date=" + date);
+        sb.append("\n}");
+        return sb.toString();
+    }
 }

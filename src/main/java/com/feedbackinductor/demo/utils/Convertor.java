@@ -5,6 +5,7 @@ import com.feedbackinductor.demo.model.discourse.DiscourseResponse;
 import com.feedbackinductor.demo.model.discourse.Post;
 import com.feedbackinductor.demo.model.twitter.Tweet;
 import com.feedbackinductor.demo.model.twitter.TwitterData;
+import lombok.experimental.UtilityClass;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@UtilityClass
 public class Convertor {
 
     private static String DATE_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
@@ -23,6 +25,7 @@ public class Convertor {
             ingestedData.setBody(post.getCooked());
             ingestedData.setUserName(post.getUsername());
             ingestedData.setDate(parseStringDate(post.getCreated_at()));
+            ingestedDataList.add(ingestedData);
         }
         return ingestedDataList;
     }
@@ -34,6 +37,7 @@ public class Convertor {
             ingestedData.setBody(tweet.getText());
             ingestedData.setUserName(tweet.getAuthorId());
             ingestedData.setDate(parseStringDate(tweet.getCreatedAt()));
+            ingestedDataList.add(ingestedData);
         }
         return ingestedDataList;
     }
