@@ -1,7 +1,7 @@
 package com.feedbackinductor.demo.controller;
 
 import com.feedbackinductor.demo.component.ApiCaller;
-import com.feedbackinductor.demo.model.Post;
+import com.feedbackinductor.demo.model.discourse.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

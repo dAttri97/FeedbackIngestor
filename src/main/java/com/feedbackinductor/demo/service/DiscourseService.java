@@ -1,7 +1,7 @@
 package com.feedbackinductor.demo.service;
 
-import com.feedbackinductor.demo.model.DiscourseResponse;
-import com.feedbackinductor.demo.model.Post;
+import com.feedbackinductor.demo.model.discourse.DiscourseResponse;
+import com.feedbackinductor.demo.model.discourse.Post;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

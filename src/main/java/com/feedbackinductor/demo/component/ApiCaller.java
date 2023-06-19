@@ -1,6 +1,6 @@
 package com.feedbackinductor.demo.component;
 
-import com.feedbackinductor.demo.model.Post;
+import com.feedbackinductor.demo.model.discourse.Post;
 import com.feedbackinductor.demo.service.DiscourseService;
 import com.feedbackinductor.demo.service.TwitterService;
 import org.springframework.beans.factory.annotation.Autowired;
