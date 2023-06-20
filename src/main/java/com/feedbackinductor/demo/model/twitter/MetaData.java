@@ -37,4 +37,16 @@ public class MetaData {
     public void setNextToken(String nextToken) {
         this.next_token = nextToken;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("IngestedData{");
+        sb.append("newest_id='" + newest_id);
+        sb.append(", oldest_id='" + oldest_id);
+        sb.append(", result_count=" + result_count);
+        sb.append(", next_token=" + next_token);
+        sb.append("}");
+        return sb.toString();
+    }
 }

@@ -22,5 +22,15 @@ public class TwitterData {
         this.meta = meta;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("IngestedData{");
+        sb.append("List<Tweet>='" + data);
+        sb.append(", MetaData='" + meta);
+        sb.append("}");
+        return sb.toString();
+    }
+
 }
 

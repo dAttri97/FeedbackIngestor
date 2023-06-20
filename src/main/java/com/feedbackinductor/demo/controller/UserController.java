@@ -21,10 +21,9 @@ public class UserController {
         this.apiCaller = apiCaller;
     }
     @GetMapping
-    @RequestMapping("/api/users")
-    public List<Post> getUsers() {
-        List<Post> postList = apiCaller.getDiscoursePosts();
-        return postList;
+    @RequestMapping("/api/discourse")
+    public List<IngestedData> getDiscourse() throws ParseException {
+        return apiCaller.getDiscoursePosts();
     }
 
     @GetMapping

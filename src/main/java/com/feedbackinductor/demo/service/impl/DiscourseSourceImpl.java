@@ -1,7 +1,9 @@
 package com.feedbackinductor.demo.service.impl;
 
 import com.feedbackinductor.demo.model.IngestedData;
-import com.feedbackinductor.demo.model.discourse.DiscourseResponse;
+import com.feedbackinductor.demo.model.discourse.Post;
+import com.feedbackinductor.demo.model.discourse.PostData;
+import com.feedbackinductor.demo.model.discourse.PostStream;
 import com.feedbackinductor.demo.service.InputSource;
 import com.google.gson.Gson;
 import com.feedbackinductor.demo.utils.Convertor;
@@ -25,7 +27,7 @@ public class DiscourseSourceImpl implements InputSource {
 
     @Override
     public List<IngestedData> parseData(String inputData) throws ParseException {
-        DiscourseResponse myData = gson.fromJson(inputData, DiscourseResponse.class);
+        Post myData = gson.fromJson(inputData, Post.class);
         return Convertor.getIngestedDataFromDiscourseResponse(myData);
     }
 }

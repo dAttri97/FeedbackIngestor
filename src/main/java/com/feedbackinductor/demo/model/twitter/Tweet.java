@@ -37,4 +37,16 @@ public class Tweet {
     public void setCreatedAt(String createdAt) {
         this.created_at = createdAt;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("IngestedData{");
+        sb.append("id='" + id);
+        sb.append(", author_id='" + author_id);
+        sb.append(", created_at=" + created_at);
+        sb.append(", text=" + text);
+        sb.append("}");
+        return sb.toString();
+    }
 }

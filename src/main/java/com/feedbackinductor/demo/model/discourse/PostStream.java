@@ -1,10 +1,8 @@
 package com.feedbackinductor.demo.model.discourse;
 
-import com.feedbackinductor.demo.model.discourse.Post;
-
 import java.util.List;
 
-public class DiscourseResponse {
+public class PostStream {
     private List<Post> posts;
 
     // Getter
@@ -15,5 +13,10 @@ public class DiscourseResponse {
     // Setter
     public void setPosts(List<Post> posts) {
         this.posts = posts;
+    }
+
+    @Override
+    public String toString() {
+        return "Posts { " + posts + "}";
     }
 }
