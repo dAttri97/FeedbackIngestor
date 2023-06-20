@@ -1,10 +1,14 @@
 package com.feedbackinductor.demo.component;
 
 import com.feedbackinductor.demo.model.IngestedData;
+import com.feedbackinductor.demo.model.appData.IData;
 import com.feedbackinductor.demo.model.discourse.Post;
-import com.feedbackinductor.demo.service.impl.DiscourseSourceImpl;
-import com.feedbackinductor.demo.service.impl.TwitterSourceImpl;
+import com.feedbackinductor.demo.service.DiscourseSourceImpl;
+import com.feedbackinductor.demo.service.IInputSource;
+import com.feedbackinductor.demo.service.TwitterSourceImpl;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.PropertyMapper.Source;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -14,15 +18,30 @@ import java.text.ParseException;
 import java.util.List;
 @Component
 public class ApiCaller {
-    private final DiscourseSourceImpl discourseSourceImpl;
-    private final TwitterSourceImpl twitterSourceImpl;
+    private final List<IInputSource> sources;
+    private final List<IData> allData;
 
 
     @Autowired
-    public ApiCaller(DiscourseSourceImpl discourseSourceImpl, TwitterSourceImpl twitterSourceImpl) {
-        this.discourseSourceImpl = discourseSourceImpl;
-        this.twitterSourceImpl = twitterSourceImpl;
+    public ApiCaller() {
+        this.sources = new List<IInputSource>();
     }
+
+    @Autowired
+    public registerSource(IInputSource source) {
+        this.sources.add(source)
+    }
+
+    public getAllPosts() {
+        // for every source in sources
+            // source.pull()
+            // posts.add(source.getPosts())
+    }
+
+    public getAllTweets() {
+        
+    }
+
 
     @GetMapping
     public List<IngestedData> getDiscoursePosts() throws ParseException {

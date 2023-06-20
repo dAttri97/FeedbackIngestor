@@ -1,4 +1,4 @@
-package com.feedbackinductor.demo.model;
+package com.feedbackinductor.demo.model.appData;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class IngestedData {
+public class IngestedPost implements IData{
     private String user_name;
     private String body;
     private Date date;
