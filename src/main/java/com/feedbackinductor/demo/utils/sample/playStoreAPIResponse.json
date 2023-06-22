@@ -1,25 +1,14 @@
 {
-  "reviews": [
+  "reviewId": "87654321",
+  "authorName": "Joan Smith",
+  "comments": [
     {
-      "reviewId": "ABC123",
-      "userName": "JohnDoe",
-      "userComment": "Great app!",
-      "userRating": 5,
-      "reviewDate": "2023-06-18T10:15:00Z",
-      "appVersion": "1.2.3",
-      "developerReply": {
-        "replyText": "Thank you for your positive feedback!"
+      "userComment": {
+        "text": "This app is awesome!",
+        "lastModified": "1452114723",
+        "starRating": 5,
+        "language": "en"
       }
-    },
-    {
-      "reviewId": "DEF456",
-      "userName": "JaneSmith",
-      "userComment": "Needs improvement.",
-      "userRating": 3,
-      "reviewDate": "2023-06-17T14:30:00Z",
-      "appVersion": "1.2.3",
-      "developerReply": null
     }
-  ],
-  "pageToken": "NEXT_PAGE_TOKEN"
+  ]
 }
