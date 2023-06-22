@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "type": "TWEET",
+    "created_at": "2020-09-18T13:06:15.000+00:00",
+    "source": "TWITTER",
+    "language": "EN",
+    "authorID": 123456789,
+    "data": {
+      "postID": 140199395325270017,
+      "body": "Just had the most amazing dinner at that new restaurant in town!#foodie#yum",
+      "userID": 123456789,
+      "hashtags": null,
+      "date": "2020-09-18T13:06:15.000+00:00",
+      "verified": false
+    }
+  },
+  {
+    "created_at": "2020-09-18T13:06:15.000+00:00",
+    "source": "DISCORD",
+    "type": "COMMENT",
+    "id": 2,
+    "language": "EN",
+    "authorID": 123456789,
+    "data": {
+      "commentID": 140199395325270017,
+      "body": "Just had the most amazing dinner at that new restaurant in town!#foodie#yum",
+      "userID": 123456789,
+      "date": "2020-09-18T13:06:15.000+00:00",
+      "metadata": {
+
+      }
+    }
+  }
+]

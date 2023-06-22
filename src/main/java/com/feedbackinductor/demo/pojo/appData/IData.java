@@ -2,32 +2,49 @@ package com.feedbackinductor.demo.pojo.appData;
 
 import com.feedbackinductor.demo.utils.Language;
 import com.feedbackinductor.demo.utils.DataType;
+import com.feedbackinductor.demo.utils.Source;
 
 import java.util.Date;
 
 public class IData<T> {
-    private Date createdDate;
-    DataType source;
+    private long id;
+    private Date createdAt;
+    private Source source;
+    private DataType type;
     private Language language;
-    private long authorID;
-    private long postID;
-    private String body;
-    T metaData;
+    private String authorID;
+    private T data;
 
-    public Date getCreatedDate() {
-        return createdDate;
+    public long getId() {
+        return id;
     }
 
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public DataType getSource() {
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Source getSource() {
         return source;
     }
 
-    public void setSource(DataType source) {
+    public void setSource(Source source) {
         this.source = source;
+    }
+
+    public DataType getType() {
+        return type;
+    }
+
+    public void setType(DataType type) {
+        this.type = type;
     }
 
     public Language getLanguage() {
@@ -38,35 +55,19 @@ public class IData<T> {
         this.language = language;
     }
 
-    public long getAuthorID() {
+    public String getAuthorID() {
         return authorID;
     }
 
-    public void setAuthorID(long authorID) {
+    public void setAuthorID(String authorID) {
         this.authorID = authorID;
     }
 
-    public long getPostID() {
-        return postID;
+    public T getData() {
+        return data;
     }
 
-    public void setPostID(long postID) {
-        this.postID = postID;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
-
-    public T getMetaData() {
-        return metaData;
-    }
-
-    public void setMetaData(T metaData) {
-        this.metaData = metaData;
+    public void setData(T data) {
+        this.data = data;
     }
 }

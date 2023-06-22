@@ -9,9 +9,9 @@ import lombok.Setter;
 public class UserComment {
     private String text;
 
-    private String lastModified;
+    private long lastModified;
 
-    private StarRating starRating;
+    private int starRating;
 
     private String language;
 
@@ -20,11 +20,11 @@ public class UserComment {
         return text;
     }
 
-    public void setLastModified(String lastModified) {
+    public void setLastModified(long lastModified) {
         this.lastModified = lastModified;
     }
 
-    public void setStarRating(StarRating starRating) {
+    public void setStarRating(int starRating) {
         this.starRating = starRating;
     }
 
@@ -36,11 +36,11 @@ public class UserComment {
         return text;
     }
 
-    public String getLastModified() {
+    public long getLastModified() {
         return lastModified;
     }
 
-    public StarRating getStarRating() {
+    public int getStarRating() {
         return starRating;
     }
 

@@ -4,5 +4,6 @@ public enum Language {
     EN,
     HINDI,
     FRENCH,
-    SPANISH;
+    SPANISH,
+    en;
 }

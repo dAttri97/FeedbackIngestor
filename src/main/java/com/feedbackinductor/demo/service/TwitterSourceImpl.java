@@ -36,8 +36,9 @@ public class TwitterSourceImpl implements IInputSource {
         List<IData> list = new ArrayList<>();
         for(String tweet:tweetsToProcess) {
             TwitterData data = gson.fromJson(tweet, TwitterData.class);
+            System.out.println("~~~~~~TwitterSourceImpl");
             System.out.println(data);
-            list.add(Convertor.getIngestedDataFromTwitterData(data));
+            list.add(Convertor.getIDataFromTwitterData(data));
         }
         return list;
     }

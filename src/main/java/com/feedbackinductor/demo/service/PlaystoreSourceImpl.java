@@ -2,7 +2,6 @@ package com.feedbackinductor.demo.service;
 
 import com.feedbackinductor.demo.pojo.appData.IData;
 import com.feedbackinductor.demo.pojo.playstore.Review;
-import com.feedbackinductor.demo.pojo.twitter.TwitterData;
 import com.feedbackinductor.demo.utils.Convertor;
 import com.google.gson.Gson;
 
@@ -34,7 +33,7 @@ public class PlaystoreSourceImpl implements IInputSource {
         for(String review:reviewsToProcess) {
             Review data = gson.fromJson(review, Review.class);
             System.out.println(data);
-            list.add(Convertor.getIngestedDataFromReviewData(data));
+            list.add(Convertor.getIDataFromReviewData(data));
         }
         return list;
     }

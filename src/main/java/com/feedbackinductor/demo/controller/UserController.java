@@ -2,6 +2,10 @@ package com.feedbackinductor.demo.controller;
 
 import com.feedbackinductor.demo.component.ApiCaller;
 import com.feedbackinductor.demo.pojo.appData.IData;
+import com.feedbackinductor.demo.service.DiscourseSourceImpl;
+import com.feedbackinductor.demo.service.IInputSource;
+import com.feedbackinductor.demo.service.PlaystoreSourceImpl;
+import com.feedbackinductor.demo.service.TwitterSourceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +20,12 @@ public class UserController {
     @Autowired
     public UserController(ApiCaller apiCaller) {
         this.apiCaller = apiCaller;
+        IInputSource source = new PlaystoreSourceImpl();
+        source.initialize();
+        this.apiCaller.register(source);
+        source = new TwitterSourceImpl();
+        source.initialize();
+        this.apiCaller.register(source);
     }
 
     @GetMapping
@@ -27,12 +37,18 @@ public class UserController {
     @GetMapping
     @RequestMapping("/api/discourse")
     public List<IData> getDiscourse() {
-        return apiCaller.getAllDiscoursePosts();
+        return null;
     }
 
     @GetMapping
     @RequestMapping("/api/tweets")
-    public List<IData> getTweets() {
-        return apiCaller.getAllTweets();
+    public List<IData> getTweets() throws ParseException {
+        return apiCaller.getTweets();
+    }
+
+    @GetMapping
+    @RequestMapping("/api/review")
+    public List<IData> getPlayStore() throws ParseException {
+        return apiCaller.getPlayStoreReviews();
     }
 }
