@@ -1,5 +1,6 @@
-package com.feedbackinductor.demo.model.appData;
+package com.feedbackinductor.demo.pojo.appData;
 
+import com.feedbackinductor.demo.utils.DataType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,10 +8,11 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class IngestedPost implements IData{
+public class IngestedData {
     private String user_name;
     private String body;
     private Date date;
+    DataType dataType = DataType.TWEET;
 
     public String getUserName() {
         return user_name;
@@ -46,4 +48,5 @@ public class IngestedPost implements IData{
         sb.append("\n}");
         return sb.toString();
     }
+
 }

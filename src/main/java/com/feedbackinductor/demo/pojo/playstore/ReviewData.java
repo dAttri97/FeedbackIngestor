@@ -1,6 +1,5 @@
-package com.feedbackinductor.demo.model.playstore;
+package com.feedbackinductor.demo.pojo.playstore;
 
-import com.feedbackinductor.demo.model.playstore.Review;
 import lombok.Getter;
 import lombok.Setter;
 

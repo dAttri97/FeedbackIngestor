@@ -1,7 +1,7 @@
 package com.feedbackinductor.demo.caller;
 
-import com.feedbackinductor.demo.model.discourse.PostStream;
-import com.feedbackinductor.demo.model.discourse.Post;
+import com.feedbackinductor.demo.pojo.discourse.PostStream;
+import com.feedbackinductor.demo.pojo.discourse.Post;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

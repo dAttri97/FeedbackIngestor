@@ -1,4 +1,4 @@
-package com.feedbackinductor.demo.model.intercom;
+package com.feedbackinductor.demo.pojo.intercom;
 
 public class User {
     private String id;

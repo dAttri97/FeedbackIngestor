@@ -1,16 +1,17 @@
 package com.feedbackinductor.demo.service;
 
-import com.feedbackinductor.demo.model.IngestedData;
+
+import com.feedbackinductor.demo.pojo.appData.IData;
 
 import java.text.ParseException;
 import java.util.List;
 
-public interface InputSource {
+public interface IInputSource {
 
     void initialize();
 
     void pull();
 
-    List<IngestedData> parseData(String inputSource) throws ParseException;
+    List<IData> parseData() throws ParseException;
 
 }
