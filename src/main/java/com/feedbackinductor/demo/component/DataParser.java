@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class ApiCaller {
+public class DataParser {
     private List<IInputSource> sourceList;
     /**
      * Assumption:
@@ -18,7 +18,7 @@ public class ApiCaller {
      */
     private List<IData> allData;
 
-    public ApiCaller() {
+    public DataParser() {
         this.sourceList = new ArrayList<>();
         this.allData = new ArrayList<>();
     }

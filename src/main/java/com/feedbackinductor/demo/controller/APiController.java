@@ -1,6 +1,6 @@
 package com.feedbackinductor.demo.controller;
 
-import com.feedbackinductor.demo.component.ApiCaller;
+import com.feedbackinductor.demo.component.DataParser;
 import com.feedbackinductor.demo.pojo.appData.IData;
 import com.feedbackinductor.demo.service.DiscourseSourceImpl;
 import com.feedbackinductor.demo.service.IInputSource;
@@ -20,8 +20,8 @@ import java.util.List;
  * More APIs can be added if we want to fetch data from more sources.
  */
 @RestController
-public class UserController {
-    private final ApiCaller apiCaller;
+public class APiController {
+    private final DataParser apiCaller;
 
     /**
      * Injects ApiCaller and initializes the sources we are using.
@@ -30,7 +30,7 @@ public class UserController {
      * @throws ParseException
      */
     @Autowired
-    public UserController(ApiCaller apiCaller) throws ParseException {
+    public APiController(DataParser apiCaller) throws ParseException {
         this.apiCaller = apiCaller;
         IInputSource source = new PlaystoreSourceImpl();
         source.initialize();
