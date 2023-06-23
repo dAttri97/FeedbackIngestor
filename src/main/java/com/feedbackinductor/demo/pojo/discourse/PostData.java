@@ -1,18 +1,16 @@
 package com.feedbackinductor.demo.pojo.discourse;
 
 public class PostData {
-    private PostStream postStream;
+    private PostStream post_stream;
 
     private int id;
 
-    // Getters and setters
-
     public PostStream getPostStream() {
-        return postStream;
+        return post_stream;
     }
 
     public void setPostStream(PostStream postStream) {
-        this.postStream = postStream;
+        this.post_stream = postStream;
     }
 
     public int getId() {
@@ -25,6 +23,6 @@ public class PostData {
 
     @Override
     public String toString() {
-        return "PostData: { PostStream: " + postStream + ", id: " + id + "}";
+        return "PostData: { PostStream: " + post_stream + ", id: " + id + "}";
     }
 }

@@ -10,9 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 @Service
 public class TwitterSourceImpl implements IInputSource {
@@ -36,8 +34,6 @@ public class TwitterSourceImpl implements IInputSource {
         List<IData> list = new ArrayList<>();
         for(String tweet:tweetsToProcess) {
             TwitterData data = gson.fromJson(tweet, TwitterData.class);
-            System.out.println("~~~~~~TwitterSourceImpl");
-            System.out.println(data);
             list.add(Convertor.getIDataFromTwitterData(data));
         }
         return list;

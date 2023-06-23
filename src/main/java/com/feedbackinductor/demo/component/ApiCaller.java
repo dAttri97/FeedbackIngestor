@@ -1,17 +1,13 @@
 package com.feedbackinductor.demo.component;
 
 import com.feedbackinductor.demo.pojo.appData.IData;
-import com.feedbackinductor.demo.service.DiscourseSourceImpl;
 import com.feedbackinductor.demo.service.IInputSource;
-
-import com.feedbackinductor.demo.service.TwitterSourceImpl;
-import com.feedbackinductor.demo.utils.DataType;
 import com.feedbackinductor.demo.utils.Source;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.text.ParseException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class ApiCaller {
@@ -27,8 +23,10 @@ public class ApiCaller {
         this.allData = new ArrayList<>();
     }
 
-    public void register(IInputSource source) {
+    public void register(IInputSource source) throws ParseException {
         sourceList.add(source);
+//        source.pull();
+//        allData.addAll(source.parseData());
     }
 
     public List<IData> getAllData() throws ParseException {
@@ -40,8 +38,7 @@ public class ApiCaller {
         return allData;
     }
 
-    public List<IData> getTweets() throws ParseException {
-        getAllData();
+    public List<IData> getTweets() {
         List<IData> twitterData = new ArrayList<>();
         for(IData data:allData) {
             if(Source.TWITTER.equals(data.getSource()))
@@ -50,14 +47,22 @@ public class ApiCaller {
         return twitterData;
     }
 
-    public List<IData> getPlayStoreReviews() throws ParseException {
-        getAllData();
-        List<IData> twitterData = new ArrayList<>();
+    public List<IData> getPlayStoreReviews() {
+        List<IData> playStoreReviews = new ArrayList<>();
         for(IData data:allData) {
             if(Source.PLAYSTORE.equals(data.getSource()))
-                twitterData.add(data);
+                playStoreReviews.add(data);
         }
-        return twitterData;
+        return playStoreReviews;
+    }
+
+    public List<IData> getDiscoursePosts() {
+        List<IData> discoursePosts = new ArrayList<>();
+        for(IData data:allData) {
+            if(Source.DISCOURSE.equals(data.getSource()))
+                discoursePosts.add(data);
+        }
+        return discoursePosts;
     }
 
 

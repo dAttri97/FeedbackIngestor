@@ -18,12 +18,15 @@ import java.util.List;
 public class UserController {
     private final ApiCaller apiCaller;
     @Autowired
-    public UserController(ApiCaller apiCaller) {
+    public UserController(ApiCaller apiCaller) throws ParseException {
         this.apiCaller = apiCaller;
         IInputSource source = new PlaystoreSourceImpl();
         source.initialize();
         this.apiCaller.register(source);
         source = new TwitterSourceImpl();
+        source.initialize();
+        this.apiCaller.register(source);
+        source = new DiscourseSourceImpl();
         source.initialize();
         this.apiCaller.register(source);
     }
@@ -37,18 +40,18 @@ public class UserController {
     @GetMapping
     @RequestMapping("/api/discourse")
     public List<IData> getDiscourse() {
-        return null;
+        return apiCaller.getDiscoursePosts();
     }
 
     @GetMapping
     @RequestMapping("/api/tweets")
-    public List<IData> getTweets() throws ParseException {
+    public List<IData> getTweets() {
         return apiCaller.getTweets();
     }
 
     @GetMapping
     @RequestMapping("/api/review")
-    public List<IData> getPlayStore() throws ParseException {
+    public List<IData> getPlayStore()  {
         return apiCaller.getPlayStoreReviews();
     }
 }
