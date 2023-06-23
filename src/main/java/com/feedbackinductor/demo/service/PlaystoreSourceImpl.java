@@ -22,7 +22,7 @@ public class PlaystoreSourceImpl implements IInputSource {
     }
 
     @Override
-    public void pull() {
+    public void pullData() {
         reviewsToProcess.add(REVIEW_1);
         reviewsToProcess.add(REVIEW_2);
     }

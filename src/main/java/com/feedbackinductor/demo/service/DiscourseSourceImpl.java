@@ -28,7 +28,7 @@ public class DiscourseSourceImpl implements IInputSource {
     }
 
     @Override
-    public void pull() {
+    public void pullData() {
         postsToProcess.add(POST_1);
     }
 

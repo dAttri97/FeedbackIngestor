@@ -25,16 +25,11 @@ public class ApiCaller {
 
     public void register(IInputSource source) throws ParseException {
         sourceList.add(source);
-//        source.pull();
-//        allData.addAll(source.parseData());
+        source.pullData();
+        allData.addAll(source.parseData());
     }
 
-    public List<IData> getAllData() throws ParseException {
-        for(IInputSource source: sourceList) {
-            source.pull();
-            System.out.println(source.parseData());
-            allData.addAll(source.parseData());
-        }
+    public List<IData> getAllData() {
         return allData;
     }
 

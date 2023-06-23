@@ -25,7 +25,7 @@ public class TwitterSourceImpl implements IInputSource {
     }
 
     @Override
-    public void pull() {
+    public void pullData() {
         pullDataFromTwitter();
     }
 
