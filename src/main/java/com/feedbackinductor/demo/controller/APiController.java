@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  * Controller layer for API mapping.
- * Currently, 5 APIs have been defined.
+ * Currently, 4 APIs have been defined.
  * More APIs can be added if we want to fetch data from more sources.
  */
 @RestController
@@ -65,7 +65,7 @@ public class APiController {
     }
 
     /**
-     * Parses the database to only return records originating form Discourse source.
+     * Parses the database to only return records originating form Twitter source.
      * @return List of IData
      */
     @GetMapping
@@ -75,7 +75,7 @@ public class APiController {
     }
 
     /**
-     * Parses the database to only return records originating form Discourse source.
+     * Parses the database to only return records originating form PlayStore source.
      * @return List of IData
      */
     @GetMapping

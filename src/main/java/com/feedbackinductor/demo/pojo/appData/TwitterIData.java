@@ -4,6 +4,9 @@ import lombok.Setter;
 
 import java.util.Date;
 
+/**
+ * Data and metadata for Twitter tweets.
+ */
 @Getter
 @Setter
 public class TwitterIData {

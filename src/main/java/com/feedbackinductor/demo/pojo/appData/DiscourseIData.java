@@ -5,6 +5,9 @@ import lombok.Setter;
 
 import java.util.Date;
 
+/**
+ * Data and metadata for Discourse posts.
+ */
 @Getter
 @Setter
 public class DiscourseIData {

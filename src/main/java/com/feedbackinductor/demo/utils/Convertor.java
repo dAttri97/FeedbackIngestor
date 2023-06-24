@@ -16,6 +16,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Converter class to convert Data from different sources to uniform internal IData.
+ */
 @UtilityClass
 public class Convertor {
 

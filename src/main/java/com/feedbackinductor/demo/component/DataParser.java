@@ -9,12 +9,22 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Data Parser acts as a layer between the individual sources and API controller.
+ * sourceList can be updated to add/removes sources.
+ * It has one common function to fetch data from all sources and store it in database.
+ * For simplifying the solution separate filter functions have be created to fetch particular sources from database.
+ * A common filter function can be created if we receive source in our API request.
+ */
 @Component
 public class DataParser {
-    private List<IInputSource> sourceList;
     /**
-     * Assumption:
-     *
+     * List to store all the sources we are currently using the fetch data.
+     */
+    private List<IInputSource> sourceList;
+
+    /**
+     * Assumption: The list represents a distributed database.
      */
     private List<IData> allData;
 

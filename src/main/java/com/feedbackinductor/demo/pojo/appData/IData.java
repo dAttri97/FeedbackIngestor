@@ -6,6 +6,11 @@ import com.feedbackinductor.demo.utils.Source;
 
 import java.util.Date;
 
+/**
+ * Represents the uniform internal structure, that is being used to store the data.
+ * It contains fields that are common to all the sources.
+ * @param <T> Source specific data & metadata.
+ */
 public class IData<T> {
     private long id;
     private Date createdAt;

@@ -17,7 +17,7 @@ public interface IInputSource {
     void initialize();
 
     /**
-     * Pulls data from the Source. We are assuming that we always receive data from source.
+     * Pulls data from the Source. We are assuming that we always receive a string value from source.
      */
     void pullData();
 
