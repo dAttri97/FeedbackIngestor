@@ -1,6 +1,5 @@
 package com.feedbackinductor.demo.utils;
 
-
 import com.feedbackinductor.demo.pojo.appData.DiscourseIData;
 import com.feedbackinductor.demo.pojo.appData.IData;
 import com.feedbackinductor.demo.pojo.appData.PlayStoreIData;

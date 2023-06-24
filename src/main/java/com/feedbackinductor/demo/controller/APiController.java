@@ -21,26 +21,26 @@ import java.util.List;
  */
 @RestController
 public class APiController {
-    private final DataParser apiCaller;
+    private final DataParser dataParser;
 
     /**
      * Injects ApiCaller and initializes the sources we are using.
      * More sources can be added and initialized as per requirement.
-     * @param apiCaller
+     * @param dataParser
      * @throws ParseException
      */
     @Autowired
-    public APiController(DataParser apiCaller) throws ParseException {
-        this.apiCaller = apiCaller;
+    public APiController(DataParser dataParser) throws ParseException {
+        this.dataParser = dataParser;
         IInputSource source = new PlaystoreSourceImpl();
         source.initialize();
-        this.apiCaller.register(source);
+        this.dataParser.register(source);
         source = new TwitterSourceImpl();
         source.initialize();
-        this.apiCaller.register(source);
+        this.dataParser.register(source);
         source = new DiscourseSourceImpl();
         source.initialize();
-        this.apiCaller.register(source);
+        this.dataParser.register(source);
     }
 
     /**
@@ -51,7 +51,7 @@ public class APiController {
     @GetMapping
     @RequestMapping("/api/allData")
     public List<IData> getAllData() throws ParseException {
-        return apiCaller.getAllData();
+        return dataParser.getAllData();
     }
 
     /**
@@ -61,7 +61,7 @@ public class APiController {
     @GetMapping
     @RequestMapping("/api/discourse")
     public List<IData> getDiscoursePosts() {
-        return apiCaller.getDiscoursePosts();
+        return dataParser.getDiscoursePosts();
     }
 
     /**
@@ -71,7 +71,7 @@ public class APiController {
     @GetMapping
     @RequestMapping("/api/tweets")
     public List<IData> getTweets() {
-        return apiCaller.getTweets();
+        return dataParser.getTweets();
     }
 
     /**
@@ -81,16 +81,6 @@ public class APiController {
     @GetMapping
     @RequestMapping("/api/review")
     public List<IData> getPlayStoreReviews()  {
-        return apiCaller.getPlayStoreReviews();
-    }
-
-    /**
-     * Parses the database to only return records originating form Discourse source.
-     * @return List of IData
-     */
-    @GetMapping
-    @RequestMapping("/api/review")
-    public List<IData> getIntercomConversation()  {
-        return null;
+        return dataParser.getPlayStoreReviews();
     }
 }
