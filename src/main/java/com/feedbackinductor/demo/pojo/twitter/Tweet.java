@@ -1,4 +1,4 @@
-package com.feedbackinductor.demo.model.twitter;
+package com.feedbackinductor.demo.pojo.twitter;
 
 public class Tweet {
     private String id;

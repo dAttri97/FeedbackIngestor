@@ -1,4 +1,4 @@
-package com.feedbackinductor.demo.model.discourse;
+package com.feedbackinductor.demo.pojo.discourse;
 
 import java.util.List;
 
